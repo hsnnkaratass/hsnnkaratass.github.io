@@ -143,7 +143,7 @@ In our endeavor to undertake the mission flight, we meticulously conducted numer
 
 **Flight Video:** You can witness some part of the our flight video during the competition.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eu7qqW2X3FY" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QpyCNWbW3N8?si=prD3_V38Zlf0JykT" frameborder="0" allowfullscreen></iframe>
 
 ### Results
 
