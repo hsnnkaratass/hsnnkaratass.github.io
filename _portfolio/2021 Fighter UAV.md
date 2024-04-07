@@ -1,13 +1,12 @@
 ---
 title: "2021 Teknofest Fighter UAV Competition"
-excerpt: "In 2021, I actively participated in the Fighter UAV Competition organized as part of the TEKNOFEST Technology competitions. Tasked with  developing a UAV-GCS system with the “Autonomous Dogfight” capability. In the given area, the developed system must have autonomous takeoff, flight and landing. Only allowed sensor for the autonomous dogfight is camera. As a member of my team, our objective was to comprehend and develop the autonomous dogfight algorithms and explore their potential applications in military domains.<br/><img src='/images/FU.png' width='600' height='450'>"
+excerpt: "The Fighter UAV Competition, organized within the TEKNOFEST Technology competitions, focuses mainly on Autonomous Dogfight, a technology gaining increasing importance with developing UAV's. In parallel with developments in technology, Unmanned Aerial Vehicles (UAVs) are continuously improving their operational capabilities and gaining more autonomy. In this context, the goal is to equip UAVs, which already have a high level of autonomy, with the ability to engage in dogfights similar to those conducted by fighter jets. The competition showcases the practical functionality of these algorithms by deploying Swarm UAVs in real-world conditions. Key objectives include understanding how software algorithms for swarming UAVs operate, exploring the technology's potential in civil and military applications, and encouraging young talents in this field. Given the transformative potential of Swarm UAVs in daily life and defense strategies, the competition aims to contribute to the technology's development.<br/><img src='/images/FU.png' width='600' height='450'>"
 collection: portfolio
 ---
 
-
 ## About the Competition
 
-The Fighter UAV Competition, organized within the TEKNOFEST Technology competitions, focuses mainly on Autonomous Dogfight, a technology gaining increasing importance with developing UAV's. In parallel with developments in technology, Unmanned Aerial Vehicles (UAVs) are continuously improving their operational capabilities and gaining more autonomy. In this context, the goal is to equip UAVs, which already have a high level of autonomy, with the ability to engage in dogfights similar to those conducted by fighter jets. The competition showcases the practical functionality of these algorithms by deploying Swarm UAVs in real-world conditions. Key objectives include understanding how software algorithms for swarming UAVs operate, exploring the technology's potential in civil and military applications, and encouraging young talents in this field. Given the transformative potential of Swarm UAVs in daily life and defense strategies, the competition aims to contribute to the technology's development.
+In 2021, I actively participated in the Fighter UAV Competition organized as part of the TEKNOFEST Technology competitions. Tasked with  developing a UAV-GCS system with the “Autonomous Dogfight” capability. In the given area, the developed system must have autonomous takeoff, flight and landing capabilities. As a member of my team, our objective was to comprehend and develop the autonomous dogfight algorithms and explore their potential applications in military domains. In order to accomplish the autonomous dogfight, me and my team put a valuable effort. Below you can find the competition rules and my responsibilities.
 
 <p align="center">
   <img src="/images/savasan.png" alt="Figure 1 - 2021 Fighter UAV Competition"/>
@@ -21,26 +20,25 @@ In order to fulfill the autonomous dogfight mission, according to rules, teams m
   <img src="/images/rectangle.png" alt="Figure 2 - Sample Lock Area"/>
 </p>
 
-
 ## My Responsibilities
 
 I have responsibilities on various fields as my teammates. In my first year at the team I worked in the computer vision sub-unit, we have performed tasks such as creating algorithm architectures that utilize artificial neural networks for object detection and tracking, collecting the necessary data to train these networks, duplicating it, and extracting relative positional vectors of detected objects using stereo vision. I worked mainly on stereo vision, data preparation and augmentation for the training and test parts. Other than software, I worked with UAV avionics, wifi and telemetry communications,  power distribution of avionics. Furthermore, I gained experience as a Ground Control Station and UAV-1 pilot.
 
 ### Data Preparation and Model Training
 
-We developed an object detection algorithm using Res-Net structure. We used Resnet-18, because we need to detect only UAV's and the model should be relatively light. We altered the last the layer of the model to give five different outputs. First output gives 1 or 0 according to whether there is a UAV or not in the scene. If there is, last four output gives the rectangle surruonding the UAV. We implemented it using Pytorch and the ResNet structure can be seen in the Figure 1. We selected ResNet because of the ... 
+We developed an object detection algorithm using Res-Net structure. We used Resnet-18, because we need to detect only UAV's and the model should be relatively light. We altered the last the layer of the model to give five different outputs. First output gives 1 or 0 according to whether there is a UAV or not in the scene. If there is, last four output gives the rectangle surruonding the UAV. We implemented it using Pytorch and the ResNet structure can be seen in the Figure 1. We selected ResNet, because, when compared to ResNet-34, ResNet-50, and other deep learning architectures, ResNet-18 is relatively shallow. It is made up of 18 layers, including convolutional, pooling, fully connected, and shortcut connections. In comparison to deeper models, the reduced depth facilitates training and allows for faster convergence. Also, the concept of residual learning enables the network to learn residual mappings, i.e., the difference between the input and output of a layer. This facilitates the training of deeper networks and helps alleviate the vanishing gradient problem. 
 
 <p align="center">
-  <img src="/images/resnet18.png" alt="Figure 1 - ResNet18 Structure"/>
+  <img src="/images/resnet18.png" alt="Figure 3 - ResNet18 Structure"/>
 </p>
 
 <p align="center">
-  <em>Figure 1 - ResNet18 Structure</em>
+  <em>Figure 3 - ResNet18 Structure</em>
 </p>
 
-For the training part, Complete Intersection of Union (CIOU) was selected because it is more suitable for our case. It does not only chechk the intersection over union of the ground truth and output, it also takes into account the distance between the centers of the predicted and ground truth bounding boxes. For the optimization part, widely used Adam optimizer was selected. 
+For the training part, as a loss function Complete Intersection of Union (CIOU) was selected because it is more suitable for our case. It does not only chechk the intersection over union of the ground truth and output, it also takes into account the distance between the centers of the predicted and ground truth bounding boxes. After using CIOU we observed that the accuracy of the model increased and the training time was decreased. For the optimization part, widely used Adam optimizer was selected. 
 
-After developing neural network archtitecture, we dive into to the data prepration part. Training and test data are one of the most important things for the accuracy of the model. So, we give importance on dataset creation. We gathered 10.000 labelled images from the "RC Chasing" videos from YouTube. In order to avoid bias and variance on our model, we used detailed labelling. Images were labelled according to seven categories in the Table 1. 
+After developing neural network archtitecture, we dive into to the data prepration part. We know that the training and test data are one of the most important things for the accuracy of the model. So, we give importance on dataset creation. We gathered 10.000 labelled images from the "RC Chasing" videos from YouTube. In order to avoid bias and variance on our model, we used detailed labelling. Images were labelled according to seven categories in the Table 1. 
 
 *Table-1. Categories of the Labels*
 
@@ -49,45 +47,91 @@ After developing neural network archtitecture, we dive into to the data preprati
 | Object Type               | RC, Commercial Plane    |
 | Background Type           | Mountain, Forest, City, Asphalt  |
 | Cloudiness Rate           | Cloudless, Very, Partly Cloudy  |
-| Day Status                | Morning, Afternoon, Evening     |
-| Relative Camera Position  | Lower, Top, Side                |
+| Day Status                | Morning, Noon, Afternoon, Evening     |
+| Relative Camera Position  | Lower, Top, Left -Right Side          |
 | Colour of Object          | Black, White, Red ...           |
 | Size of Object            | Small, Big, Middle |
 
-In the competition area, we knew that the background was mostly mountain. So the mountain type background had an important weight in the distribution. Other parameters was also be set according to competition area conditions. One example from our dataset can be seen in figure 2. Here we labelled them in Turkish and the meanings are; "rc = radio controlled", "asfalt = aspalth", "azBulutlu = partly cloudy", "aksam = evening", "alt = from lower", "siyah = black", "orta = middle size".
+In the competition area, we knew that the background was mostly mountain. So the mountain type background had an important weight in the distribution. Other parameters was also be set according to competition area conditions. One example from our dataset can be seen in Figure 4. Here we labelled the image as "rc = radio controlled", "mountain", "cloudless", "Noon", "Top", "yellow", "middle".
 
 <p align="center">
-  <img src="/images/label.png" alt="Figure 2 - Example Labelling"/>
+  <img src="/images/data.png" alt="Figure 4 - Example Labelling"/>
 </p>
 
 <p align="center">
-  <em>Figure 2 - Example Labelling</em>
+  <em>Figure 4 - Example Labelling</em>
 </p>
 
-We gathered 10.000 labeled raw images like the Figure 2, in order to increase the image number and diversity, we applied augmentation techniques like flipping, rotating and random cropping. After augmentation, finally we got 110.000 labelled images for training.
+We gathered 10.000 labeled raw images like the Figure 4, in order to increase the image number and diversity, we applied augmentation techniques like flipping, rotating and random cropping. After augmentation, finally we got 110.000 labelled images for training.
 
 ### Stereo Vision
 
 Autonomous dogfight requires our system to know the relative locaiton of the UAV that will be tracked. After object detection part, we are going to get the relative locaiton of the target in 2 dimensions. So we are going to control the pitch and roll movements. In order to control the speed, one possible choice is bounding box size. If it is small, make the UAV nove faster or vice versa. However, for some cases, we observed that the bounding box that model predicts does not fit the UAV. So, we decided to get the exact 3D relative location of the tracked UAV according to our UAV's locaiton and create a vector from us to tracked UAV. Then speed, pitch and roll will be controled according to that vector. 
 
-For stereo vision, we developed algorithm based on keypoint detection from two cameras and matching the detected keypoints. After matching the keypoints, from their pixel locaitons on the camera screen, the distance of the rival UAV can be found from the basic triangle equations. 
-#todo resim ekle
-For keypoint detection, we used superpoint algorithm, it is .... 
-for matching the detected keypoints, we used lightglue. it is .....
+For stereo vision, we developed algorithm based on keypoint detection from two cameras and matching the detected keypoints. After matching the keypoints, from their pixel locaitons on the camera screen, the distance of the rival UAV can be found from the basic triangle equations as can be seen from Figure 5. 
 
-Although, algorithms were mostly ready for the task, the mechnaical problems arrived.... 
+<p align="center">
+  <img src="/images/stereooo.png" alt="Figure 5 - Stereo Triangle"/>
+</p>
+
+<p align="center">
+  <em>Figure 5 - Stereo Triangle</em>
+</p>
+
+
+For keypoint detection, we used superpoint algorithm, it is a deep learning-based algorithm that finds keypoints and their corresponding descriptors in the image. A convolutional neural network architecture designed for interest point detection and description is trained using a self-supervised domain adaptation framework called Homographic Adaptation. This framework enables the network to adapt and learn from different domains without explicit supervision. It consists of three parts as can be seen from the Figure 6, namely; Interest point pre-training, Interest point self-labeling, and Joint training. In the first part, the algorithm was trained with synthetic datasets for corner detection. After training with a lot of shapes in various orientations, the algorithm was able to detect corners more accurate than past stateof-the-art algorithms like Shi and Harris cornet detection.
+
+<p align="center">
+  <img src="/images/sup.png" alt="Figure 6 - Superpoint Architecture"/>
+</p>
+
+<p align="center">
+  <em>Figure 6 - Superpoint Architecture</em>
+</p>
+
+However, it was just trained on a synthetic dataset, and its performance on real images could not be enough for the task. To make it robust on real-world images, the second part “Homographic Adaptation” is used. The goal is to adapt an initial interest point function, denoted as fθ(·), to be more effective in detecting interest points in a given target domain. The method operates in a self-supervised paradigm, where a large set of images from the target domain is used that images is unlabeled images. The main part of the method is the application of random homographies to warped copies of the input image can be seen in Figure 7. 
+
+<p align="center">
+  <img src="/images/homography.png" alt="Figure 7 - Homographic Adaptation"/>
+</p>
+
+<p align="center">
+  <em>Figure 7 - Homographic Adaptation</em>
+</p>
+
+The formulation of the method involves representing the initial interest point function as fθ(·), the input image as I, the resulting interest points as x, and a random homography as H. The ideal interest point operator should be covariant concerning holographic, meaning that the output should transform with the input. In other words, if H is a homography, then Hx should be equal to fθ(H(I)). However, a detector may not be perfectly covariant in practice, and different homographies can result in different interest points. The Homographic Adaptation process aims to address this by performing an empirical sum over a large sample of random homographies. The aggregation of samples gives rise to a new14 and improved interest point detector, denoted as Fˆ(·), which is more effective at detecting
+interest points. The equation for the adapted detector is:
+
+<p align="center">
+  <img src="/images/equation.png" alt="Figure 8 - Adapted Detector Equation"/>
+</p>
+
+<p align="center">
+  <em>Figure 8 - Adapted Detector Equation</em>
+</p>
+
+After finding the keypoints also in the real-world images, the last task is to find the correspondence descriptors for keypoints. SuperPoint algorithm does this job in the single forward-pass network in real-time. Its architecture can be seen in Figure 9. The model utilizes a shared encoder that takes the input image and reduces its dimensionality through pooling. This encoder is responsible for processing the image and extracting meaningful features. After the encoder, the model diverges into two separate decoders "heads". Each head learns task-specific weights for a particular objective: one head focuses on detecting interest points, while the other head focuses on describing those interest points.
+
+<p align="center">
+  <img src="/images/desc.png" alt="Figure 9 - Descriptor Finding Architecture"/>
+</p>
+
+<p align="center">
+  <em>Figure 9 - Descriptor Finding Architecture</em>
+</p>
+
+For matching the detected keypoints, we used superglue algorithm. It basicly tries to find the matching parameters of the decriptors and uses negative log-likelihood as a loss function. 
+
+Although, algorithms were mostly ready for the task, the mechnaical problems arrived. We couldn't stabilize the two cameras apart from each other. We tried to put them under the wings but there were shaking at the wings and the image couldn't taken properly. Also, we had lots of tests to prove the accuracy of the object detection algorithm. So, we decided to control the speed of the UAV from bounding box size. However, working on stereo vision task gave me valuable experiences. 
 
 ## Competition and Results
 
 ### Preparation
 
-sayısız test 
-adım adım sistem testleri
-test çeklistleri
-ikinci UAV
-başarılamamış olması
+Over the course of ten months, we had a demanding and fulfilling experience getting ready for the Fighter UAV Competition. Working together across disciplines, my team and I explored the complexities involved in creating, assembling, and using unmanned aerial vehicles (UAVs). The partnership turned out to be a joyful but challenging undertaking, despite the difficulties brought on by our demanding academic schedules and the pandemic. By pushing the limits of our understanding, the competition gave us a platform to apply theoretical knowledge in real-world situations. We put our UAV through a rigorous testing process that gave me insightful knowledge and real-world experience that improved my learning. 
 
-Our journey towards the AUVSI SUAS 2022 competition was an intensive and rewarding experience that spanned eight months. Collaborating across disciplines—Aerospace, Mechanical, Metallurgical, and Materials Engineering—my team and I delved into the intricacies of designing, building, and operating unmanned aerial vehicles (UAVs). Despite the challenges posed by our demanding academic schedules, the collaboration proved to be a joyous yet demanding endeavor. The competition provided a platform for us to translate theoretical knowledge into practical applications, pushing the boundaries of our understanding. Through rigorous testing of our UAV, I gained valuable insights and practical experience that enhanced my learning.
+In our endeavor to undertake the mission flight, we meticulously conducted numerous system identification and tuning tests. Throughout the progression from the initial flight to the comprehensive mission test, we encountered a multitude of challenges and obstacles, including the unforeseen impact of the pandemic. Nevertheless, undeterred by these adversities, we persevered and remained resolute in our efforts to achieve a historic milestone – becoming the first team in the history of Teknofest to successfully accomplish the feat of Autonomous Dogfight.
+
 
 ### Competition Details
 
@@ -95,7 +139,7 @@ Our journey towards the AUVSI SUAS 2022 competition was an intensive and rewardi
 
 **Mission Testing:** As a responsible member during the mission testing phase, we encountered some challenges, particularly with wifi connections, which sometimes affected the image transfer to the GCS. However, despite these hurdles, the mission test provided valnurable experince for us.
 
-**Flight Video:** You can witness our flight video during the competition.
+**Flight Video:** You can witness some part of the our flight video during the competition.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eu7qqW2X3FY" frameborder="0" allowfullscreen></iframe>
 
@@ -107,11 +151,21 @@ Teams participating in the Fighter UAV 2021 competition were evaluated based on 
 - **Mission Demonstration Rank:** 2
 - **The Most Original Software Award**
 
-The Fighter UAV Competition has been held since 2019; however, because of the task difficulty no team was able to fulfill the competition main task which was guiding a rival UAV within a distance specified in the competition rules and not removing it from the camera view for 4 seconds. We were one of the first the first and only three teams that fulfill the competition tasks. After 2021, up to now, still the autonomous dogfight mission could not be fulfilled. 
+After dedicating considerable effort and perseverance, our team's hard work paid off as we secured the honorable second place in the competition. Additionally, we were recognized with the esteemed Most Original Software Award by the judge committee, acknowledging our innovative approach in developing the software component. Most significantly, we achieved a remarkable milestone by being among the first teams to successfully accomplish the autonomous dogfight, solidifying our position as pioneers in this groundbreaking field.
 
-You can check the detailed rankings [here](https://www.teknofest.org/tr/yarismalar/savasan-iha-yarismasi/). Additionally, our Flight Readiness Review video is available for viewing below.
+<p align="center">
+  <img src="/images/desc.png" alt="Figure 10 - Awards"/>
+</p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zmkGAIbsrh4" frameborder="0" allowfullscreen></iframe>
+<p align="center">
+  <em>Figure 10 - Awards </em>
+</p>
+
+The Fighter UAV Competition, initiated in 2019, has posed a significant challenge to participating teams. The main objective of the competition was to guide a rival UAV while maintaining its presence within the camera view for a continuous duration of 4 seconds, as stipulated by the competition rules. Despite several attempts by numerous teams, no successful completion of this task was achieved until our team, along with two other teams, emerged as pioneers by accomplishing the competition objectives. Remarkably, since 2021 until the present, the mission of autonomous dogfighting remains unfulfilled, signifying the complexity and demanding nature of this particular endeavor.
+
+You can check the detailed rankings [here](https://www.teknofest.org/tr/yarismalar/savasan-iha-yarismasi/). Additionally, our System Identification video is available for viewing below.
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=7RJkg5f8BT4" frameborder="0" allowfullscreen></iframe>
 
 
 ## Important Reminder
