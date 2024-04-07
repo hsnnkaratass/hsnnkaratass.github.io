@@ -7,13 +7,13 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Ahmet's Homepage"
+title                    : "Hasan's Homepage"
 title_separator          : "-"
-name                     : &name "Ahmet Cankardes"
+name                     : &name "Hasan Huseyin KARATAS"
 description              : &description "personal description"
-url                      : https://ahmetcankardes.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://hsnnkaratass.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "ahmetcankardes.github.io"
+repository               : "hsnnkaratass.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -80,14 +80,14 @@ analytics:
 
 # Site Author
 author:
-  name             : "Ahmet Cankardes"
+  name             : "Hasan Huseyin KARATAS"
   avatar           : "profile.png"
   bio              : "Undergratuade Student at METU Electrical and Electronics Engineering Department"
   location         : "Ankara, Turkey"
   employer         :
   pubmed           :
   googlescholar    : 
-  email            : "cankardes.ahmet@metu.edu.tr"
+  email            : "karatas.hasan@metu.edu.tr"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
@@ -96,13 +96,13 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "ahmetcankardes"
+  github           : "hsnnkaratass"
   google_plus      :
   keybase          :
   instagram        :
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
-  linkedin         : "ahmet-cankardes-379528215"
+  linkedin         : 
   orcid            : 
   pinterest        :
   soundcloud       :
