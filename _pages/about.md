@@ -1,49 +1,48 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: ""
+excerpt: "About me"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [academicpages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
+# ✋ Hello there, I'm Hasan Hüseyin!
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, academicpages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+I am a senior Electrical & Electronics Engineering student at Middle East Technical University (METU) in Ankara, Turkey. I am enthusiastic about delving into the field of computer vision and AI, and am eager to pursue a master's degree to enhance my expertise and skills in this domain.
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over -- just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+## Academic Journey 📖
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+I graduated from Manisa Turgutlu Science High School. Subsequently, after the university examination, I earned the opportunity to pursue my higher education at Middle East Technical University in Electrical and Electronics Engineering. The first year of my academic journey involved English Preparation School studies.
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+Upon completing the preparatory year, I transitioned to my undergraduate studies. During the course of my academic journey, I developed a keen interest in machine learning. For my senior year, I specialized in signal processing as my departmental option. Throughout my undergraduate studies, I engaged in various projects related to the courses I undertook. You can see some in Projects tab.
 
-Create content & metadata
-------
-For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+As part of the culmination of my academic journey, I am currently working on a graduation project with my team, 'Dinoco-Slam.' Our chosen project falls under the category of Autonomous Unmanned Ground Vehicle (UGV). For detailed insights into the department's graduation projects, you can visit [this link](https://capstone.eee.metu.edu.tr/projects-2023-24/).
 
-**Markdown generator**
+## Volunteering
 
-I have also created [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the academicpages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
+![Volunteering Image](/images/volunteering.png)
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+My interest in robotics ignited in 2019 when I encountered the [ANATEK aviation team at METU](https://www.anatek.org/) 🛩️, showcasing a powerful quadcopter. This encounter led me to delve into electronics and software, sparking a fascination with the complexities of robotic reliability. Joining projects like the [AUVSI-SUAS 2022](https://suas-competition.org/competitions) competition and the [Teknofest 2023 Mixed Swarm Competition](https://www.teknofest.org/en/competitions/swarm-uav-competition/), I honed my skills in avionics, path-planning, and swarm intelligence. You can see more at Projects tab!!! 
 
-Example: editing a markdown file for a talk
-![Editing a markdown file for a talk](/images/editing-talk.png)
+Furthermore, I have honed essential soft skills and fostered interdisciplinary teamwork as a member of the ANATEK Team. In addition to technical pursuits, I drive educational initiatives, preparing curriculums for Arduino and Python. Also serving as the current team captain, I am responsible to check the progress in the projects, finance and sponsorships.
 
-For more info
-------
-More info about configuring academicpages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+## Professional Experience
+
+In 2022, I broadened my horizons at [BAYKAR Technology](https://baykartech.com/en/) as an intern, delving into developing computer vision algorithms for fixed wing UAV's and developing quadcopter system from scratch for specific missions.
+
+After the summer of 2022, I started to work part-time at [Baykar Technology](https://baykartech.com/en/) as an Artificial Intelligence Software Developer, gaining insights into UAV environmental awareness, and implementing deep learning based computer vision algorithms for fixed-wing aircraft within the defense industry. The experience equipped me with practical knowledge of intricate dynamics and advanced algorithms in UAV operations. I am currently continiuing to work at Baykar. 
+
+## Motivation for Advanced Studies
+
+My journey in Artificial Intelligence has fueled a desire to pursue a Master’s Degree in AI. I am particularly interested in exploring envrironmental awareness, perception, decision making, and developing robust control solutions for autonomous systems.
+
+## Getting Started
+
+If you're interested in my academic and professional journey, feel free to explore the various sections of this website. You can find information on projects I have contributed.
+
+Thank you for visiting, and I hope you enjoy exploring my journey! I will be happy to answer your questions through my mail if you have any.
+
+## Reference
+This website is powered by the [academicpages template](https://github.com/academicpages/academicpages.github.io).
