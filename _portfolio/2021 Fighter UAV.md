@@ -4,13 +4,14 @@ excerpt: "In 2021, I actively participated in the Fighter UAV Competition organi
 collection: portfolio
 ---
 
-<p align="center">
-  <img src="/images/savasan.png" alt="Figure 1 - 2021 Fighter UAV Competition"/>
-</p>
 
 ## About the Competition
 
 The Fighter UAV Competition, organized within the TEKNOFEST Technology competitions, focuses mainly on Autonomous Dogfight, a technology gaining increasing importance with developing UAV's. In parallel with developments in technology, Unmanned Aerial Vehicles (UAVs) are continuously improving their operational capabilities and gaining more autonomy. In this context, the goal is to equip UAVs, which already have a high level of autonomy, with the ability to engage in dogfights similar to those conducted by fighter jets. The competition showcases the practical functionality of these algorithms by deploying Swarm UAVs in real-world conditions. Key objectives include understanding how software algorithms for swarming UAVs operate, exploring the technology's potential in civil and military applications, and encouraging young talents in this field. Given the transformative potential of Swarm UAVs in daily life and defense strategies, the competition aims to contribute to the technology's development.
+
+<p align="center">
+  <img src="/images/savasan.png" alt="Figure 1 - 2021 Fighter UAV Competition"/>
+</p>
 
 ## Autonomous Dogfight Mission
 
