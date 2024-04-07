@@ -1,6 +1,6 @@
 ---
 title: "2021 Teknofest Fighter UAV Competition"
-excerpt: "In 2021, I actively participated in the Fighter UAV Competition organized as part of the TEKNOFEST Technology competitions. Tasked with  developing a UAV-GCS system with the “Autonomous Dogfight” capability. In the given area, the developed system must have autonomous takeoff, flight and landing. Only allowed sensor for the autonomous dogfight is camera. As a member of my team, our objective was to comprehend and develop the autonomous dogfight algorithms and explore their potential applications in military domains.<br/><img src='/images/swarm-drones.jpg' width='600' height='450'>"
+excerpt: "In 2021, I actively participated in the Fighter UAV Competition organized as part of the TEKNOFEST Technology competitions. Tasked with  developing a UAV-GCS system with the “Autonomous Dogfight” capability. In the given area, the developed system must have autonomous takeoff, flight and landing. Only allowed sensor for the autonomous dogfight is camera. As a member of my team, our objective was to comprehend and develop the autonomous dogfight algorithms and explore their potential applications in military domains.<br/><img src='/images/FU.png' width='600' height='450'>"
 collection: portfolio
 ---
 
