@@ -167,8 +167,7 @@ The Fighter UAV Competition, initiated in 2019, has posed a significant challeng
 
 You can check the detailed rankings [here](https://www.teknofest.org/tr/yarismalar/savasan-iha-yarismasi/). Additionally, our System Identification video is available for viewing below.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/7RJkg5f8BT4?si=3nTQHWU7Y4v6-jUR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7RJkg5f8BT4?si=3nTQHWU7Y4v6-jUR" frameborder="0" allowfullscreen></iframe>
 
 ## Important Reminder
 
