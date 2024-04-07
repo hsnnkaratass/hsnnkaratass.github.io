@@ -156,7 +156,7 @@ Teams participating in the Fighter UAV 2021 competition were evaluated based on 
 After dedicating considerable effort and perseverance, our team's hard work paid off as we secured the honorable second place in the competition. Additionally, we were recognized with the esteemed Most Original Software Award by the judge committee, acknowledging our innovative approach in developing the software component. Most significantly, we achieved a remarkable milestone by being among the first teams to successfully accomplish the autonomous dogfight, solidifying our position as pioneers in this groundbreaking field.
 
 <p align="center">
-  <img src="/images/desc.png" alt="Figure 10 - Awards"/>
+  <img src="/images/odul.png" alt="Figure 10 - Awards"/>
 </p>
 
 <p align="center">
