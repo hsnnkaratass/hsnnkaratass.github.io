@@ -1,6 +1,8 @@
 ---
 title: "2021 Teknofest Fighter UAV Competition"
-excerpt: "The Fighter UAV Competition, organized within the TEKNOFEST Technology competitions, focuses mainly on Autonomous Dogfight, a technology gaining increasing importance with developing UAV's. In parallel with developments in technology, Unmanned Aerial Vehicles (UAVs) are continuously improving their operational capabilities and gaining more autonomy. In this context, the goal is to equip UAVs, which already have a high level of autonomy, with the ability to engage in dogfights similar to those conducted by fighter jets. The competition showcases the practical functionality of these algorithms by deploying Swarm UAVs in real-world conditions. Key objectives include understanding how software algorithms for swarming UAVs operate, exploring the technology's potential in civil and military applications, and encouraging young talents in this field. Given the transformative potential of Swarm UAVs in daily life and defense strategies, the competition aims to contribute to the technology's development.<br/><img src='/images/FU.png' width='600' height='450'>"
+excerpt: "The Fighter UAV Competition, organized within the TEKNOFEST Technology competitions, focuses mainly on Autonomous Dogfight, a technology gaining increasing importance with developing UAV's. In parallel with developments in technology, Unmanned Aerial Vehicles (UAVs) are continuously improving their operational capabilities and gaining more autonomy. In this context, the goal is to equip UAVs, which already have a high level of autonomy, with the ability to engage in dogfights similar to those conducted by fighter jets. The competition showcases the practical functionality of these algorithms by deploying Swarm UAVs in real-world conditions. Key objectives include understanding how software algorithms for swarming UAVs operate, exploring the technology's potential in civil and military applications, and encouraging young talents in this field. Given the transformative potential of Swarm UAVs in daily life and defense strategies, the competition aims to contribute to the technology's development.
+
+<br/><img src='/images/FU.png' width='600' height='450'>"
 collection: portfolio
 ---
 
@@ -165,7 +167,7 @@ The Fighter UAV Competition, initiated in 2019, has posed a significant challeng
 
 You can check the detailed rankings [here](https://www.teknofest.org/tr/yarismalar/savasan-iha-yarismasi/). Additionally, our System Identification video is available for viewing below.
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=7RJkg5f8BT4" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7RJkg5f8BT4?si=3nTQHWU7Y4v6-jUR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 ## Important Reminder
