@@ -64,7 +64,9 @@ In the competition area, we knew that the background was mostly mountain. So the
   <em>Figure 4 - Example Labelling</em>
 </p>
 
-We gathered 10.000 labeled raw images like the Figure 4, in order to increase the image number and diversity, we applied augmentation techniques like flipping, rotating and random cropping. After augmentation, finally we got 110.000 labelled images for training.
+We gathered 10.000 labeled raw images like the Figure 4, in order to increase the image number and diversity, we applied augmentation techniques like flipping, rotating and random cropping. After augmentation, finally we got 110.000 labelled images for training. 
+
+Finally, after training the developed dataset, we conducted inference using the Nvidia Xavier-NX platform, which yielded a commendable performance of 70 frames per second (FPS). This demonstrates the efficiency of the deployed detection algorithm in real-time object detection. Moreover, the accuracy of the model showcased promising results, indicating its effectiveness in accurately identifying objects. The achieved FPS and accuracy metrics serve as strong indicators of the algorithm's capability to handle real-world scenarios and contribute to the overall success of the dogfight mission.
 
 ### Stereo Vision
 
@@ -143,7 +145,7 @@ In our endeavor to undertake the mission flight, we meticulously conducted numer
 
 **Flight Video:** You can witness some part of the our flight video during the competition.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/QpyCNWbW3N8?si=prD3_V38Zlf0JykT" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/eu7qqW2X3FY" frameborder="0" allowfullscreen></iframe>
 
 ### Results
 
@@ -156,7 +158,7 @@ Teams participating in the Fighter UAV 2021 competition were evaluated based on 
 After dedicating considerable effort and perseverance, our team's hard work paid off as we secured the honorable second place in the competition. Additionally, we were recognized with the esteemed Most Original Software Award by the judge committee, acknowledging our innovative approach in developing the software component. Most significantly, we achieved a remarkable milestone by being among the first teams to successfully accomplish the autonomous dogfight, solidifying our position as pioneers in this groundbreaking field.
 
 <p align="center">
-  <img src="/images/odul.jpg" alt="Figure 10 - Awards"/>
+  <img src="/images/desc.png" alt="Figure 10 - Awards"/>
 </p>
 
 <p align="center">
@@ -165,7 +167,7 @@ After dedicating considerable effort and perseverance, our team's hard work paid
 
 The Fighter UAV Competition, initiated in 2019, has posed a significant challenge to participating teams. The main objective of the competition was to guide a rival UAV while maintaining its presence within the camera view for a continuous duration of 4 seconds, as stipulated by the competition rules. Despite several attempts by numerous teams, no successful completion of this task was achieved until our team, along with two other teams, emerged as pioneers by accomplishing the competition objectives. Remarkably, since 2021 until the present, the mission of autonomous dogfighting remains unfulfilled, signifying the complexity and demanding nature of this particular endeavor.
 
-You can check the detailed rankings [here](https://www.teknofest.org/tr/yarismalar/savasan-iha-yarismasi/). Additionally, our System Identification video is available for viewing below. Video is in Turkish but if needed subtitles can be used.
+You can check the detailed rankings [here](https://www.teknofest.org/tr/yarismalar/savasan-iha-yarismasi/). Additionally, our System Identification video is available for viewing below.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7RJkg5f8BT4?si=3nTQHWU7Y4v6-jUR" frameborder="0" allowfullscreen></iframe>
 

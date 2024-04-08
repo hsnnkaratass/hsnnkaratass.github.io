@@ -8,7 +8,7 @@ collection: portfolio
 # EE430 Term Project Part 1
 
 ## Overview
-This project, conducted in collaboration with my friend [Hasan Hüseyin Karatas](https://www.linkedin.com/in/hasan-huseyin-karatas/), is part of the EE430 Digital Signal Processing course at METU's Department of Electrical and Electronics Engineering. The objective of Part 1 is to implement a computer program that computes and displays the magnitude of the short-time Fourier transform (STFT) of a signal.
+This project, conducted in collaboration with my friend [Ahmet Cankardes](https://www.linkedin.com/in/ahmet-cankardes-379528215/), is part of the EE430 Digital Signal Processing course at METU's Department of Electrical and Electronics Engineering. The objective of Part 1 is to implement a computer program that computes and displays the magnitude of the short-time Fourier transform (STFT) of a signal.
 
 ## Project Description
 
