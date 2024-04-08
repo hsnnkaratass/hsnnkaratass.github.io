@@ -1,6 +1,6 @@
 ---
 title: "2023 Teknofest Mixed Swarm Competition"
-excerpt: "In 2023, I actively participated in the Swarm UAV Competition organized as part of the TEKNOFEST Technology competitions. Tasked with developing software and algorithms for Unmanned Aerial Vehicles (UAVs) operating collaboratively as a swarm, the competition aimed to assess the practical functionality of these algorithms in real-world conditions. As a member of my team, our objective was to comprehend the operational aspects of software algorithms for swarming UAVs and explore their potential applications in both civilian and military domains.<br/><img src='/images/swarm-drones.jpg' width='600' height='450'>"
+excerpt: "The primary focus of this competition revolved around the comprehensive development of software and algorithms tailored specifically for Unmanned Aerial Vehicles (UAVs) operating collaboratively in a swarm configuration. By simulating real-world conditions, the competition sought to assess the practical functionality and efficacy of these algorithms in dynamic operational scenarios. As an integral member of my team, our collective objective was to gain a profound understanding of the operational intricacies associated with software algorithms for swarming UAVs. This entailed exploring and analyzing their potential applications across diverse domains, encompassing both civilian and military sectors. By delving into the multifaceted aspects of swarm behavior and coordination, we aimed to unlock the vast potential of these collaborative UAV systems..<br/><img src='/images/swarm-drones.jpg' width='600' height='450'>"
 collection: portfolio
 ---
 
@@ -8,89 +8,70 @@ collection: portfolio
 
 The Swarm UAV Competition, organized within the TEKNOFEST Technology competitions, focuses on Swarm Unmanned Aerial Vehicles (Swarm UAV), a technology gaining increasing importance in both civilian and military applications. The competition's primary goal is to develop software and algorithms for UAVs capable of fulfilling specified missions as a swarm. The competition showcases the practical functionality of these algorithms by deploying Swarm UAVs in real-world conditions. Key objectives include understanding how software algorithms for swarming UAVs operate, exploring the technology's potential in civil and military applications, and encouraging young talents in this field. Given the transformative potential of Swarm UAVs in daily life and defense strategies, the competition aims to contribute to the technology's development.
 
+You can get the detailed information about competition and mission from [this link](https://www.teknofest.org/en/competitions/swarm-uav-competition/)
+
 ## My Responsibilities
 
-My responsibilities included working on controllers (Mellinger, PID, etc.) and designing software algorithms for navigation and trajectory. Also I was responsiblo to manage the project progression as team captain.
+My responsibilities included working on collision avoidance of the swarm members. Also, I worked with cflib library to communicate with the Crazyflie quadcopter.
 
-## 1.Position Controller
+## Collision Avoidance
 
-The position controller was designed to enable agents to move from one point to another. Due to the restrictions on using the goTo functions of Crazyswarm and Cflib libraries specified in the competition rules, a custom module was required. Several conditions were considered in developing this module:
+In order not to have collision between swarm members while navigating as a swarm and independently, there should be some control for the paths of the swarm members. After conducting a comprehensive review of the relevant literature, we decided to employ the method of "Hybrid Mutual Velocity Obstacles" as the collision avoidance module, as discussed in the article by Snape et al[1](https://ieeexplore.ieee.org/document/5746538). According to this method, each member of the swarm perceives the movements of its surrounding entities and makes decisions regarding its own motion accordingly. Within the determined safe distance, it monitors the trajectories of its own velocity vector and the velocity vectors of other swarm members to ensure the absence of any collisions. Furthermore, this method is reciprocal, taking into account that other agents also perceive their surroundings and adjust their trajectories accordingly, thereby mitigating oscillations.
 
-1. Taking into account the aerodynamics and mechanics of Crazyflie 2.x drones used in the competition.
-2. Considering the limitations of the embedded controllers in Crazyflie drones, determining how well they can follow the sent commands.
-3. Achieving the target location with minimal margin of error.
-4. Ensuring stability during movement while minimizing time sacrifice.
+The operation of the method can be summarized as follows:
 
-### Static Algorithms
+1- For the module to function when the distance between agents falls below the safe threshold, the first step is to determine the safe distance.
 
-The first set of algorithms was based on the relationship between path, speed, and time, generating straight paths. Parameters from Table 1 were used for route creation, followed by deriving the required velocity vectors using Equation 1.
+2- If another agent enters the safe zone of an agent, the possibility of a collision is checked.
 
-*Table-1. Required Parameters for Static Algorithm*
-
-| Parameter      | Description        |
-| -------------- | ------------------ |
-| Start Point    | (X<sub>1</sub>, Y<sub>1</sub>, Z<sub>1</sub>) |
-| End Point      | (X<sub>2</sub>, Y<sub>2</sub>, Z<sub>2</sub>) |
-| Time           | t                  |
-| Deceleration   | a                  |
-
-$x(t) = x_0 + vt + \frac{1}{2}at^2$ (1)
-
-Python was employed to implement the algorithm, and it was tested in simulation for a single agent. The results indicated stable operation with a low margin of error, especially when limiting speed and acceleration values. However, concerns arose regarding the adaptability of this algorithm to real-world scenarios involving multiple agents, where unforeseen changes during flight could occur. Due to the inability to respond to unpredictable changes, such as interactions between agents, communication disruptions, and errors in individual controllers, it was decided that this algorithm was not suitable for use.
-
-### Feedback Algorithms (Controllers)
-
-Given the limitations of static algorithms for dynamic systems, feedback control systems, especially PID (Proportional-Integral-Derivative) controllers, were considered. PID controllers are widely used in various applications due to their simplicity, robustness, and effectiveness in regulating system performance. The decision was made to develop a PID controller.
-
-The first step in developing a controller is accurately defining the system. Research was conducted to understand the commands that could be sent to the Crazyflie drone using Cflib. Commands such as position_setpoint(x, y, z, yaw), full_setpoint(roll, pitch, yawrate, thrust), and send_velocity_world_setpoint(vx, vy, vz, yaw) were identified. Using velocity commands for effective control, a system was designed as depicted in Figure 1.
+3- If a collision is detected, a velocity obstacle is determined for the leading agent. The velocity obstacle is a virtual cone volume that determines the directions of velocity vectors for which a collision would occur with other agents, as illustrated in Figure 1. A virtual circle with a radius equal to the sum of the radii of two agents is established. Tangents are drawn from the selected agent's center to the circle, defining the velocity obstacle cone.
 
 <p align="center">
-  <img src="/images/pid_position.png" alt="Figure 1 - Position Controller"/>
+  <img src="/images/fig1.png" alt="Figure 1 - Velocity Obstacle Area"/>
 </p>
 
 <p align="center">
-  <em>Figure 1 - Position Controller</em>
+  <em>Figure 1 - Velocity Obstacle Area</em>
 </p>
 
 
-
-After designing the system, a PID controller was implemented in Python. Subsequent tests were conducted in the simulation, and PID parameters were calibrated. Finally, real-world tests on a Crazyflie confirmed that the controller operated optimally under various conditions.
-
-To showcase the performance of developed position controller, I have prepared two videos. The first video presents simulation results using Gazebo with CrazyS, offering insights into the algorithms' behavior in a controlled virtual environment. The second video showcases real-life tests conducted with a Crazyflie 2.1 equipped with the Lighthouse positioning system, demonstrating the practical implementation of our algorithms in a physical setting.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SUDe9ivEPgo" frameborder="0" allowfullscreen></iframe>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/U0jJdcwHOl4" frameborder="0" allowfullscreen></iframe>
-
-## 2.Trajecteroy Generation and Mellinger Controller
-
-### Smooth Trajectory Planning
-
-In the competition, the requirement is to navigate smoothly through obstacles. Planning a route solely based on waypoints wouldn't meet this criterion. Therefore, a literature review was conducted on how to achieve smooth trajectory tracking using intermediate waypoints. The work done here is based on the research of [Kumar and Mellinger(2011)](https://ieeexplore.ieee.org/abstract/document/5980409).
-
-#### Mellinger Controller
-
-The Mellinger controller utilizes a non-linear model of the dynamics of a quadcopter, employing a feedback loop to accurately track the desired position and orientation of the drone. The feedback loop consists of an attitude controller and a position controller. The attitude controller manages the orientation of the drone, while the position controller governs translational motion. The attitude controller employs a non-linear controller using the rotation matrix and quaternion representation of the drone's attitude. Additionally, the position controller compares the desired and current positions using data from sensors, producing thrust commands to control the drone's position with a proportional-derivative (PD) controller. The attitude controller, in turn, generates torque commands by comparing the desired and current attitudes using data from the position controller and sensors.
-
-The Mellinger controller has been implemented for the Crazyflie 2.X drones intended for use in the competition. Therefore, it is concluded that this controller can be readily employed if the necessary trajectory can be generated.
-
-#### Trajectory Generation
-
-To ensure smooth navigation to the destination, trajectory planning is essential. Numerous trajectory generation algorithms exist for quadcopters, and this stage is critical for four-motor drone control.
-
-Piecewise polynomial functions are significant methods used in trajectory calculations. By solving a group of linear equations obtained from drone dynamics and boundary conditions, the coefficients of the polynomial function can be determined. The trajectory obtained for an environment including cylindirical obstacles is given in Figure 2.
+4- The agent should select a new velocity vector that is closest to the desired destination but remains within the determined velocity obstacle. The article discusses three different methods for performing this task. In our particular case, it is deemed sufficient to utilize the first method, which involves determining the velocity obstacle cone. This choice is justified by the fact that, in our project, the agents will not approach each other and the number of agents is relatively small.
 
 <p align="center">
-  <img src="/images/pid_position.png" alt="Figure 1 - Position Controller"/>
+  <img src="/images/fig2.png" alt="Figure 2 - Collision Free Vector"/>
 </p>
 
 <p align="center">
-  <em>Figure 2 - Example Trajectory</em>
+  <em>Figure 2 - Collision Free Vector</em>
 </p>
 
-Taking derivatives of this trajectory provides the necessary position, velocity, and acceleration vectors. Through experiments, it has been observed that sending only the position vector to the agents at the required frequency enables successful trajectory tracking. The following video shows the applied alforithms for trajectory tracking with a Crazyflie 2.1 and Lighthouse Positioning System.
+5-These procedures are repeated for other agents that are within the safe distance and at risk of collision. By applying the same methodology, a new velocity vector is determined for each of these agents, ensuring collision-free trajectories.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/oY1j8kOTbE8" frameborder="0" allowfullscreen></iframe>
+The rationale behind the second and third methods, as indicated in the article, can be elucidated as follows. Considering that the velocity obstacle determination process is applied to both agents involved, the responsibility of collision avoidance is shared by both agents. Consequently, the velocity vectors of the agents are updated by subtracting twice the magnitude of the previous velocity vector from the newly determined velocity vector, as illustrated in Figure 2. This approach ensures that both agents contribute to the avoidance of collisions.
+
+<p align="center">
+  <img src="/images/met2.png" alt="Figure 3 - Reciprocal Collision Free Vector"/>
+</p>
+
+<p align="center">
+  <em>Figure 3 - Reciprocal Collision Free Vector</em>
+</p>
+
+
+The developed system has been validated through simulations and real-life tests, providing evidence of its functionality. Simulation images are depicted in Figure 4, showcasing the results. The conducted tests were designed with consideration for a competitive environment. As mentioned earlier, in scenarios involving obstructed navigation, there is a possibility of collision between agents. Specifically, when two agents are moving in similar directions rather than directly towards each other, collision scenarios can arise. To account for all possibilities, the situation where agents converge at the same point was also tested, and no collision occurred. In Figure 4.a, the straight red and green lines represent the initial directions of the agents, while the red lines generated from behind the left agent illustrate the planned trajectories to prevent collision.
+
+<p align="center">
+  <img src="/images/cfp.png" alt="Figure 4 - Collision Free Paths"/>
+</p>
+
+<p align="center">
+  <em>Figure 4 - Collision Free Paths</em>
+</p>
+
+
+Below you can watch the test flight of the first mission. 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oQFZXaJ2mFo?si=yc1SWivwSDk1gkk_" frameborder="0" allowfullscreen></iframe>
 
 ## Important Reminder
 

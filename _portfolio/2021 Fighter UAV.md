@@ -166,7 +166,7 @@ After dedicating considerable effort and perseverance, our team's hard work paid
 
 The Fighter UAV Competition, initiated in 2019, has posed a significant challenge to participating teams. The main objective of the competition was to guide a rival UAV while maintaining its presence within the camera view for a continuous duration of 4 seconds, as stipulated by the competition rules. Despite several attempts by numerous teams, no successful completion of this task was achieved until our team, along with two other teams, emerged as pioneers by accomplishing the competition objectives. Remarkably, since 2021 until the present, the mission of autonomous dogfighting remains unfulfilled, signifying the complexity and demanding nature of this particular endeavor.
 
-You can check the detailed rankings [here](https://www.teknofest.org/tr/yarismalar/savasan-iha-yarismasi/). Additionally, our System Identification video is available for viewing below.
+You can check the detailed rankings [here](https://www.teknofest.org/tr/yarismalar/savasan-iha-yarismasi/). Additionally, our System Identification video is available for viewing below. Video is in Turkish, if needed subtitles can be used. 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7RJkg5f8BT4?si=3nTQHWU7Y4v6-jUR" frameborder="0" allowfullscreen></iframe>
 
