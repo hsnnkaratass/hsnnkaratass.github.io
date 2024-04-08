@@ -145,8 +145,7 @@ In our endeavor to undertake the mission flight, we meticulously conducted numer
 
 **Flight Video:** You can witness some part of the our flight video during the competition.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/eu7qqW2X3FY" frameborder="0" allowfullscreen></iframe>
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QpyCNWbW3N8?si=cOkTOUCVD-4KVa2-" frameborder="0" allowfullscreen></iframe>
 ### Results
 
 Teams participating in the Fighter UAV 2021 competition were evaluated based on Mission Rank, Flight Proveness Video, and Critical Design Report Ranking, ultimately contributing to their Overall Rank. Also, there were judge special awards. Here are our team's rankings:
@@ -158,7 +157,7 @@ Teams participating in the Fighter UAV 2021 competition were evaluated based on 
 After dedicating considerable effort and perseverance, our team's hard work paid off as we secured the honorable second place in the competition. Additionally, we were recognized with the esteemed Most Original Software Award by the judge committee, acknowledging our innovative approach in developing the software component. Most significantly, we achieved a remarkable milestone by being among the first teams to successfully accomplish the autonomous dogfight, solidifying our position as pioneers in this groundbreaking field.
 
 <p align="center">
-  <img src="/images/desc.png" alt="Figure 10 - Awards"/>
+  <img src="/images/odul.jpg" alt="Figure 10 - Awards"/>
 </p>
 
 <p align="center">
