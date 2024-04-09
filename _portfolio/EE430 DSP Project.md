@@ -35,7 +35,7 @@ A graphical user interface (GUI) is created using MATLAB's app designer to facil
 
 ## Exploring DTMF Signaling
 
-In this phase of the project, I delved into the fascinating world of dual-tone multi-frequency (DTMF) signaling with my friend Hasan again. The aim was to implement signal processing methods using MATLAB to generate, transmit, receive, and decode audio DTMF signals.
+In this phase of the project, We delved into the fascinating world of dual-tone multi-frequency (DTMF) signaling with my teammate Ahmet again. The aim was to implement signal processing methods using MATLAB to generate, transmit, receive, and decode audio DTMF signals.
 
 ## Unveiling the Background
 
