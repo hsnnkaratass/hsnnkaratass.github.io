@@ -16,7 +16,7 @@ My responsibilities included working on collision avoidance of the swarm members
 
 ## Collision Avoidance
 
-In order not to have collision between swarm members while navigating as a swarm and independently, there should be some control for the paths of the swarm members. After conducting a comprehensive review of the relevant literature, we decided to employ the method of "Hybrid Mutual Velocity Obstacles" as the collision avoidance module, as discussed in the article by Snape et al[1](https://ieeexplore.ieee.org/document/5746538). According to this method, each member of the swarm perceives the movements of its surrounding entities and makes decisions regarding its own motion accordingly. Within the determined safe distance, it monitors the trajectories of its own velocity vector and the velocity vectors of other swarm members to ensure the absence of any collisions. Furthermore, this method is reciprocal, taking into account that other agents also perceive their surroundings and adjust their trajectories accordingly, thereby mitigating oscillations.
+In order not to have collision between swarm members while navigating as a swarm and independently, there should be some control for the paths of the swarm members. After conducting a comprehensive review of the relevant literature, we decided to employ the method of "Hybrid Mutual Velocity Obstacles" as the collision avoidance module, as discussed in the article by Snape et al [[1]] (https://ieeexplore.ieee.org/document/5746538). According to this method, each member of the swarm perceives the movements of its surrounding entities and makes decisions regarding its own motion accordingly. Within the determined safe distance, it monitors the trajectories of its own velocity vector and the velocity vectors of other swarm members to ensure the absence of any collisions. Furthermore, this method is reciprocal, taking into account that other agents also perceive their surroundings and adjust their trajectories accordingly, thereby mitigating oscillations.
 
 The operation of the method can be summarized as follows:
 
@@ -50,11 +50,11 @@ The operation of the method can be summarized as follows:
 The rationale behind the second and third methods, as indicated in the article, can be elucidated as follows. Considering that the velocity obstacle determination process is applied to both agents involved, the responsibility of collision avoidance is shared by both agents. Consequently, the velocity vectors of the agents are updated by subtracting twice the magnitude of the previous velocity vector from the newly determined velocity vector, as illustrated in Figure 2. This approach ensures that both agents contribute to the avoidance of collisions.
 
 <p align="center">
-  <img src="/images/met2.png" alt="Figure 3 - Reciprocal Collision Free Vector"/>
+  <img src="/images/met2.png" alt="Figure 3 - Reciprocal Collision Free Vectors"/>
 </p>
 
 <p align="center">
-  <em>Figure 3 - Reciprocal Collision Free Vector</em>
+  <em>Figure 3 - Reciprocal Collision Free Vectors</em>
 </p>
 
 

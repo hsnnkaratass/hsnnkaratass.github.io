@@ -22,13 +22,16 @@ In order to fulfill the autonomous dogfight mission, according to rules, teams m
   <img src="/images/rectangle.png" alt="Figure 2 - Sample Lock Area"/>
 </p>
 
+<p align="center">
+  <em>Figure 2 - Sample Lock Area</em>
+</p>
 ## My Responsibilities
 
 I have responsibilities on various fields as my teammates. In my first year at the team I worked in the computer vision sub-unit, we have performed tasks such as creating algorithm architectures that utilize artificial neural networks for object detection and tracking, collecting the necessary data to train these networks, duplicating it, and extracting relative positional vectors of detected objects using stereo vision. I worked mainly on stereo vision, data preparation and augmentation for the training and test parts. Other than software, I worked with UAV avionics, wifi and telemetry communications,  power distribution of avionics. Furthermore, I gained experience as a Ground Control Station and UAV-1 pilot.
 
 ### Data Preparation and Model Training
 
-We developed an object detection algorithm using Res-Net structure. We used Resnet-18, because we need to detect only UAV's and the model should be relatively light. We altered the last the layer of the model to give five different outputs. First output gives 1 or 0 according to whether there is a UAV or not in the scene. If there is, last four output gives the rectangle surruonding the UAV. We implemented it using Pytorch and the ResNet structure can be seen in the Figure 1. We selected ResNet, because, when compared to ResNet-34, ResNet-50, and other deep learning architectures, ResNet-18 is relatively shallow. It is made up of 18 layers, including convolutional, pooling, fully connected, and shortcut connections. In comparison to deeper models, the reduced depth facilitates training and allows for faster convergence. Also, the concept of residual learning enables the network to learn residual mappings, i.e., the difference between the input and output of a layer. This facilitates the training of deeper networks and helps alleviate the vanishing gradient problem. 
+We developed an object detection algorithm using Res-Net structure. We used Resnet-18 [[1]] (https://arxiv.org/pdf/1512.03385.pdf), because we need to detect only UAV's and the model should be relatively light. We altered the last the layer of the model to give five different outputs. First output gives 1 or 0 according to whether there is a UAV or not in the scene. If there is, last four output gives the rectangle surruonding the UAV. We implemented it using Pytorch and the ResNet structure can be seen in the Figure 1. We selected ResNet, because, when compared to ResNet-34, ResNet-50, and other deep learning architectures, ResNet-18 is relatively shallow. It is made up of 18 layers, including convolutional, pooling, fully connected, and shortcut connections. In comparison to deeper models, the reduced depth facilitates training and allows for faster convergence. Also, the concept of residual learning enables the network to learn residual mappings, i.e., the difference between the input and output of a layer. This facilitates the training of deeper networks and helps alleviate the vanishing gradient problem. 
 
 <p align="center">
   <img src="/images/resnet18.png" alt="Figure 3 - ResNet18 Structure"/>
@@ -38,7 +41,7 @@ We developed an object detection algorithm using Res-Net structure. We used Resn
   <em>Figure 3 - ResNet18 Structure</em>
 </p>
 
-For the training part, as a loss function Complete Intersection of Union (CIOU) was selected because it is more suitable for our case. It does not only chechk the intersection over union of the ground truth and output, it also takes into account the distance between the centers of the predicted and ground truth bounding boxes. After using CIOU we observed that the accuracy of the model increased and the training time was decreased. For the optimization part, widely used Adam optimizer was selected. 
+For the training part, as a loss function Complete Intersection of Union (CIOU) [[2]] (https://arxiv.org/pdf/2005.03572.pdf) was selected because it is more suitable for our case. It does not only chechk the intersection over union of the ground truth and output, it also takes into account the distance between the centers of the predicted and ground truth bounding boxes. After using CIOU we observed that the accuracy of the model increased and the training time was decreased. For the optimization part, widely used Adam optimizer was selected. 
 
 After developing neural network archtitecture, we dive into to the data prepration part. We know that the training and test data are one of the most important things for the accuracy of the model. So, we give importance on dataset creation. We gathered 10.000 labelled images from the "RC Chasing" videos from YouTube. In order to avoid bias and variance on our model, we used detailed labelling. Images were labelled according to seven categories in the Table 1. 
 
@@ -54,7 +57,7 @@ After developing neural network archtitecture, we dive into to the data preprati
 | Colour of Object          | Black, White, Red ...           |
 | Size of Object            | Small, Big, Middle |
 
-In the competition area, we knew that the background was mostly mountain. So the mountain type background had an important weight in the distribution. Other parameters was also be set according to competition area conditions. One example from our dataset can be seen in Figure 4. Here we labelled the image as "rc = radio controlled", "mountain", "cloudless", "Noon", "Top", "yellow", "middle".
+In the competition area, we knew that the background was mostly mountain. So the mountain type background had an important weight in the distribution. Other parameters was also be set according to competition area conditions. One example from our dataset can be seen in Figure 4. Here we labelled the image as "radio controlled", "mountain", "cloudless", "noon", "top", "yellow", "middle".
 
 <p align="center">
   <img src="/images/data.png" alt="Figure 4 - Example Labelling"/>
@@ -79,11 +82,11 @@ For stereo vision, we developed algorithm based on keypoint detection from two c
 </p>
 
 <p align="center">
-  <em>Figure 5 - Stereo Triangle</em>
+  <em>Figure 5 - Stereo Triangle [3] (https://www.researchgate.net/figure/Stereo-Triangulation_fig1_305110045)</em>
 </p>
 
 
-For keypoint detection, we used superpoint algorithm, it is a deep learning-based algorithm that finds keypoints and their corresponding descriptors in the image. A convolutional neural network architecture designed for interest point detection and description is trained using a self-supervised domain adaptation framework called Homographic Adaptation. This framework enables the network to adapt and learn from different domains without explicit supervision. It consists of three parts as can be seen from the Figure 6, namely; Interest point pre-training, Interest point self-labeling, and Joint training. In the first part, the algorithm was trained with synthetic datasets for corner detection. After training with a lot of shapes in various orientations, the algorithm was able to detect corners more accurate than past stateof-the-art algorithms like Shi and Harris cornet detection.
+For keypoint detection, we used Superpoint [[4]] (https://arxiv.org/pdf/1712.07629.pdf) algorithm, it is a deep learning-based algorithm that finds keypoints and their corresponding descriptors in the image. A convolutional neural network architecture designed for interest point detection and description is trained using a self-supervised domain adaptation framework called Homographic Adaptation. This framework enables the network to adapt and learn from different domains without explicit supervision. It consists of three parts as can be seen from the Figure 6, namely; Interest point pre-training, Interest point self-labeling, and Joint training. In the first part, the algorithm was trained with synthetic datasets for corner detection. After training with a lot of shapes in various orientations, the algorithm was able to detect corners more accurate than past stateof-the-art algorithms like Shi and Harris cornet detection.
 
 <p align="center">
   <img src="/images/sup.png" alt="Figure 6 - Superpoint Architecture"/>
@@ -124,7 +127,7 @@ After finding the keypoints also in the real-world images, the last task is to f
   <em>Figure 9 - Descriptor Finding Architecture</em>
 </p>
 
-For matching the detected keypoints, we used superglue algorithm. It basicly tries to find the matching parameters of the decriptors and uses negative log-likelihood as a loss function. 
+For matching the detected keypoints, we used Superglue [[5]] (https://arxiv.org/pdf/1911.11763.pdf) algorithm. It basicly tries to find the matching parameters of the decriptors and uses negative log-likelihood as a loss function. 
 
 Although, algorithms were mostly ready for the task, the mechnaical problems arrived. We couldn't stabilize the two cameras apart from each other. We tried to put them under the wings but there were shaking at the wings and the image couldn't taken properly. Also, we had lots of tests to prove the accuracy of the object detection algorithm. So, we decided to control the speed of the UAV from bounding box size. However, working on stereo vision task gave me valuable experiences. 
 
