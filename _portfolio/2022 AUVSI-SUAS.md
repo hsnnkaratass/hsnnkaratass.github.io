@@ -1,6 +1,6 @@
 ---
 title: "AUVSI SUAS 2022 Competition"
-excerpt: "AUVSI SUAS is an annual competition that challenges student teams to design, build, and operate unmanned aerial vehicles (UAVs or drones). The competition typically involves a series of missions that test the capabilities of the teams' autonomous systems. These missions often include tasks such as autonomous flight, target identification, and payload delivery.<br/><img src='/images/kesekci.jpg' width='600' height='450'>"
+excerpt: "AUVSI SUAS is an annual competition that challenges student teams to design, build, and operate unmanned aerial vehicles (UAVs or drones). The competition typically involves a series of missions that test the capabilities of the teams' autonomous systems. These missions often include tasks such as autonomous flight, target identification, mapping and payload delivery.<br/><img src='/images/kesekci.jpg' width='600' height='450'>"
 collection: portfolio
 ---
 
